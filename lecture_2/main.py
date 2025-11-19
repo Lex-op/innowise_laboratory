@@ -20,7 +20,8 @@ def generate_profile(age: int):
     if age <= 12: return "Child"
     if age <= 19: return "Teenager" 
     return "Adult"
-         
+
+
 def profile_summary(dictionary: dict):
     """Prints a formated summary of a user profile.
 
@@ -60,6 +61,7 @@ def profile_summary(dictionary: dict):
             print(f"{key}: {value}")
     print("-"*3)        
 
+
 def main():
     """
     Main function that collects user profile data and displays a summary
@@ -82,17 +84,25 @@ def main():
     """
     user_name = input("Enter your full name: ")  
     birth_year_str = input("Enter your birth year: ")
+
     birth_year = int(birth_year_str)
     current_age = 2025 - birth_year
+
     hobbies = []
     # Collect hobbies until user enters 'stop'
     while (hobby := input("Enter a favorite hobby or type 'stop' to finish: ")).lower() != "stop":
         hobbies.append(hobby)
+
     life_stage = generate_profile(current_age) 
+
     user_profile={"Name": user_name, 
                   "Age": current_age,
                   "Life Stage": life_stage,
                   "Hobbies": hobbies }
-    profile_summary(user_profile)
-# Program entry point - starts the user profile creation process
-main()
+    
+    profile_summary(user_profile)  
+    
+
+if __name__=="__main__":
+    # Program entry point - starts the user profile creation process
+    main()
