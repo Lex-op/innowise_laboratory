@@ -61,7 +61,7 @@ def get_all_books(
         List[schemas.BookResponse]: Paginated list of books.
     """
     books = db.query(models.Book).offset(skip).limit(limit).all()
-    return books
+    return books # type: ignore
 
 
 @app.delete("/books/{book_id}", status_code=204)
