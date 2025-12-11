@@ -170,3 +170,10 @@ poetry.toml
 
 # LSP config files
 pyrightconfig.json
+
+# Project-specific ignores for lecture_5
+/lecture_5/*.db
+/lecture_5/venv/
+/lecture_5/.venv/
+/lecture_5/build/
+/lecture_5/dist/
